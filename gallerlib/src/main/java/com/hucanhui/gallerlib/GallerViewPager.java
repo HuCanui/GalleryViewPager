@@ -8,6 +8,7 @@ import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
+import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Interpolator;
 import android.widget.LinearLayout;
@@ -41,6 +42,18 @@ public class GallerViewPager extends LinearLayout{
         viewPager.setPageMargin(DensityUtil.dp2px(context, 15));
         viewPager.setOffscreenPageLimit(3);
         viewPager.setPageTransformer(true, new ScaleGallerTransformer());
+        viewPager.setOnTouchListener(new OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                int action = event.getAction();
+                switch (action) {
+                    case MotionEvent.ACTION_UP:
+                        recoverCycle();
+                        break;
+                }
+                return false;
+            }
+        });
     }
 
 

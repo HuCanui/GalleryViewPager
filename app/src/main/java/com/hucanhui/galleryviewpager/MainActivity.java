@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 
 import com.hucanhui.gallerlib.GallerAdapter;
@@ -19,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(new Adapter());
         viewPager.setDuration(4000);
         viewPager.startAutoCycle();
-        viewPager.setSliderTransformDuration(1000, new DecelerateInterpolator(0.7f));
+        viewPager.setSliderTransformDuration(1500, null);
     }
 
 

@@ -1,14 +1,14 @@
 package com.hucanhui.galleryviewpager;
 
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.animation.AccelerateDecelerateInterpolator;
-import android.view.animation.DecelerateInterpolator;
 
 import com.hucanhui.gallerlib.GallerAdapter;
 import com.hucanhui.gallerlib.GallerViewPager;
+import com.hucanhui.gallerlib.ScaleGallerTransformer;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         GallerViewPager viewPager = (GallerViewPager) findViewById(R.id.view_pager);
         viewPager.setAdapter(new Adapter());
+        viewPager.setPageTransformer(true, new ScaleGallerTransformer());
         viewPager.setDuration(4000);
         viewPager.startAutoCycle();
         viewPager.setSliderTransformDuration(1500, null);

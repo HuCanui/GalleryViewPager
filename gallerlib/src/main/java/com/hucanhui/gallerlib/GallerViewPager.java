@@ -41,7 +41,7 @@ public class GallerViewPager extends LinearLayout{
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         viewPager.setPageMargin(DensityUtil.dp2px(context, 15));
         viewPager.setOffscreenPageLimit(3);
-        viewPager.setPageTransformer(true, new ScaleGallerTransformer());
+//
         viewPager.setOnTouchListener(new OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
